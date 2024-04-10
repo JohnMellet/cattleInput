@@ -12,7 +12,7 @@
       <!-- Entry call to action -->
       <div class="cattle-entry-container">
         <h1>Enter Cattle Data</h1>
-        <button>Add new entry</button>
+        <button id="" class="btn large-btn">Add new entry</button>
         <div class="custom-select">
           <select>
             <option value="all">All</option>
@@ -52,32 +52,37 @@
             </button>
           </div>
           <div class="cattle-form-body">
-            <label class="cattle-form-control" for=""></label>
-            <input type="" class="cattle-form-label" id="" value="" />
+            <label class="cattle-form-control" for="">Enter Name: </label>
+            <input type="text" class="cattle-form-label" id="" value="" />
 
-            <label class="cattle-form-control" for=""></label>
-            <input type="" class="cattle-form-label" id="" value="" />
+            <label class="cattle-form-control" for="">Gender: </label>
+            <input type="checkbox" class="cattle-form-label" id="" value="" />
+            <input type="checkbox" class="cattle-form-label" id="" value="" />
 
-            <label class="cattle-form-control" for=""></label>
-            <input type="" class="cattle-form-label" id="" value="" />
+            <label class="cattle-form-control" for="">Branded: </label>
+            <input type="checkbox" class="cattle-form-label" id="" value="" />
+            <input type="checkbox" class="cattle-form-label" id="" value="" />
 
-            <label class="cattle-form-control" for=""></label>
-            <input type="" class="cattle-form-label" id="" value="" />
+            <label class="cattle-form-control" for="">Tagged: </label>
+            <input type="checkbox" class="cattle-form-label" id="" value="" />
+            <input type="checkbox" class="cattle-form-label" id="" value="" />
           </div>
           <div class="cattle-form-footer">
-            <button id="" class="" type="submit"></button>
+            <button id="cattle-submit-btn" class="btn large-btn" type="submit">
+              Add Cattle
+            </button>
           </div>
         </form>
+        <dialog id="confirm-close-dialog">
+          <form method="dialog">
+            <p class="dialog-text">Discard unsaved changes?</p>
+            <div class="clos-dialog-btn-container">
+              <button id="cancel-btn" class="btn small-btn">Cancel</button>
+              <button id="discard-btn" class="btn small-btn">Discard</button>
+            </div>
+          </form>
+        </dialog>
       </div>
-      <dialog id="confirm-close-dialog">
-        <form method="dialog">
-          <p class="dialog-text">Discard unsaved changes?</p>
-          <div class="clos-dialog-btn-container">
-            <button id="cancel-btn" class="">Cancel</button>
-            <button id="discard-btn" class="">Discard</button>
-          </div>
-        </form>
-      </dialog>
 
       <!-- Card Display -->
       <div id="cattle-output-container"></div>
