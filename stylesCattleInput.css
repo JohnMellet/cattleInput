@@ -18,16 +18,6 @@
 body {
   background: var(--main-background-color);
 }
-
-/* .cattle-entry-form,
-#confirm-close-dialog {
-  display: none;
-} */
-
-.temp {
-  display: none;
-}
-
 /* Initial home screen */
 
 main {
@@ -50,6 +40,14 @@ main {
   flex-direction: column;
   gap: 10px;
   position: relative; /* this is so child element (cattle-entry-form can be position absolute si it takes it out but relative to its parent*/
+}
+
+.cattle-home {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 10px;
 }
 
 h1 {
@@ -156,8 +154,6 @@ select {
 .cattle-entry-form {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
-
   position: absolute;
   top: 0;
   left: 0;
@@ -165,6 +161,10 @@ select {
   height: 100%;
   width: 100%;
   color: beige;
+}
+
+.cattle-entry-form.hidden {
+  display: none;
 }
 
 .cattle-form-header {
@@ -203,4 +203,14 @@ select {
 
 .cattle-form-footer {
   margin: auto;
+}
+
+.confirm-close-dialog {
+  width: 100%;
+  padding: 2em;
+  text-align: center;
+}
+
+.confirm-close-dialog p {
+  margin-bottom: 1em;
 }
