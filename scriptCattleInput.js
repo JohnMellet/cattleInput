@@ -1,3 +1,12 @@
-const openEntryForm = document.querySelector(".add-entry-button");
+const openEntryForm = document.getElementById("add-entry-btn");
+const cattleHome = document.querySelector(".cattle-home");
+const cattleEntryForm = document.querySelector(".cattle-entry-form");
 
-openEntryForm.addEventListener("click", () => {});
+function toggleHidden() {
+  cattleHome.classList.toggle("hidden");
+  cattleEntryForm.classList.toggle("hidden");
+}
+
+openEntryForm.addEventListener("click", () => {
+  toggleHidden();
+});
