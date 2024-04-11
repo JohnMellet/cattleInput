@@ -1,0 +1,17 @@
+User is faced with Entry cattle Data screen
+User can click "Add New Entry"
+USer can click on filter which filters displayed cards
+
+New Entry
+
+When the user clicks the red x it closes the entry form
+  if the user has entered data it opens dialog to cancel the close or close and discard changes
+
+The user enters the name which is stored for use in card fucntion
+
+User selects radio button options and value is stored depending on choice
+
+When add entry button, form submitted and data stored in array for use in card fucntion
+  USer submitted data is displayed as card on the screen.
+
+  
