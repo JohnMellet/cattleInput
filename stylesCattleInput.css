@@ -163,7 +163,7 @@ select {
   color: beige;
 }
 
-.cattle-entry-form.hidden {
+.hidden {
   display: none;
 }
 
