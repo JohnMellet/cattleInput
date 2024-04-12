@@ -4,15 +4,12 @@ const cattleEntryForm = document.querySelector(".cattle-entry-form");
 const dialogModal = document.querySelector(".confirm-close-dialog");
 const closeEntryBtn = document.getElementById("close-form-btn");
 const nameInput = document.getElementById("cattle-name");
+const discardBtn = document.getElementById("discard-btn");
 
 function toggleHidden() {
   cattleHome.classList.toggle("hidden");
   cattleEntryForm.classList.toggle("hidden");
 }
-
-openEntryForm.addEventListener("click", () => {
-  toggleHidden();
-});
 
 function checkCattleInput() {
   const checkRadioButtons = document.querySelectorAll(
@@ -26,6 +23,21 @@ function checkCattleInput() {
   }
 }
 
+function discardChanges() {
+  nameInput.value = "";
+  const radioButtons = document.querySelectorAll('input[type="radio"]');
+  radioButtons.forEach((button) => {
+    button.checked = false;
+  });
+  toggleHidden();
+}
+
+openEntryForm.addEventListener("click", () => {
+  toggleHidden();
+});
+
 closeEntryBtn.addEventListener("click", () => {
   checkCattleInput();
 });
+
+discardBtn.addEventListener("click", discardChanges);
