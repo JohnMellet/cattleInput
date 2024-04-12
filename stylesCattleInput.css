@@ -206,9 +206,15 @@ select {
 }
 
 .confirm-close-dialog {
-  width: 100%;
+  width: 300px;
   padding: 2em;
   text-align: center;
+  margin: 200px auto;
+}
+
+.confirm-close-dialog::backdrop {
+  background: rgba(68, 80, 92, 1);
+  opacity: 0.6;
 }
 
 .confirm-close-dialog p {
