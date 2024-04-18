@@ -220,3 +220,33 @@ select {
 .confirm-close-dialog p {
   margin-bottom: 1em;
 }
+
+.cattle-output-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.cattle-card {
+  border: 5px solid black;
+  border-radius: 10px;
+  width: 300px;
+
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+
+.cattle-card h2 {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .cattle-card-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

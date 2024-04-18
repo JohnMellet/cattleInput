@@ -5,6 +5,9 @@ const dialogModal = document.querySelector(".confirm-close-dialog");
 const closeEntryBtn = document.getElementById("close-form-btn");
 const nameInput = document.getElementById("cattle-name");
 const discardBtn = document.getElementById("discard-btn");
+const outputDiv = document.getElementById("cattle-output-container");
+
+let cattleInputArray = [];
 
 function toggleHidden() {
   cattleHome.classList.toggle("hidden");
@@ -21,6 +24,22 @@ function checkCattleInput() {
   } else {
     toggleHidden();
   }
+}
+
+function createCattleCard(cattleEntry) {
+  const cattleCard = document.createElement("div");
+  cattleCard.classList.add("cattle-card");
+
+  cattleCard.innerHTML = `
+  <h2 class="cattle-card-title">${cattleEntry.name}</h2>
+  <div class="cattle-card-text">
+  <p>${cattleEntry.gender} </p>
+  <p>${cattleEntry.branded} </p>
+  <p>${cattleEntry.tagged} </p>
+  </div>
+  `;
+
+  outputDiv.appendChild(cattleCard);
 }
 
 function discardChanges() {
@@ -41,3 +60,28 @@ closeEntryBtn.addEventListener("click", () => {
 });
 
 discardBtn.addEventListener("click", discardChanges);
+
+cattleEntryForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const cattleName = document.getElementById("cattle-name").value;
+  const cattleGender = document.querySelector(
+    "input[name='gender']:checked"
+  ).value;
+  const branded = document.querySelector('input[name="brand"]:checked').value;
+  const tagged = document.querySelector('input[name="tagging"]:checked').value;
+
+  const cattleEntry = {
+    id: Date.now(),
+    name: cattleName,
+    gender: cattleGender,
+    branded: branded,
+    tagged: tagged,
+  };
+
+  cattleInputArray.push(cattleEntry);
+  localStorage.setItem("cattleInputArray", JSON.stringify(cattleInputArray));
+  discardChanges();
+
+  createCattleCard(cattleEntry);
+});
