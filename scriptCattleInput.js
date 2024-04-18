@@ -80,8 +80,20 @@ cattleEntryForm.addEventListener("submit", (e) => {
   };
 
   cattleInputArray.push(cattleEntry);
-  localStorage.setItem("cattleInputArray", JSON.stringify(cattleInputArray));
+  window.localStorage.setItem(
+    "cattleInputArray",
+    JSON.stringify(cattleInputArray)
+  );
   discardChanges();
 
   createCattleCard(cattleEntry);
+});
+
+window.addEventListener("load", () => {
+  const storedCattleData = localStorage.getItem("cattleInputArray");
+  if (storedCattleData) {
+    cattleInputArray = JSON.parse(storedCattleData);
+
+    cattleInputArray.forEach(createCattleCard);
+  }
 });
